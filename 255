@@ -1,0 +1,10 @@
+#!/bin/sh
+#export ETH32_DIR=`pwd`
+export ETH32_DIR="/home/immortal/Pulpit/ETH32nix-Salvation_2.1d"
+export ETH32_ET="/home/immortal/enemy-territory"
+export LD_PRELOAD="$ETH32_DIR/libETH32_2.1d.so"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.
+cd $ETH32_ET
+
+exec ./et.x86 +set fs_game etpub "$@"
+unset LD_PRELOAD

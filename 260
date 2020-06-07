@@ -1,0 +1,9 @@
+#!/bin/sh
+export ETH32_DIR=`pwd`
+export ETH32_ET="/home/immortal/enemy_territory_260b"
+export LD_PRELOAD="$ETH32_DIR/libETH32_2.1d.so"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.
+cd $ETH32_ET
+
+exec ./et.x86 "$@"
+unset LD_PRELOAD
